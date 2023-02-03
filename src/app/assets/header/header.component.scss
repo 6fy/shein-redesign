@@ -1,0 +1,37 @@
+@import '../../app.component.scss';
+
+nav.header {
+    display: flex;
+    align-items: center;
+    gap: 5em;
+    padding-bottom: 1em;
+
+    > * {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+        width: 40%;
+
+        &:first-child {
+            width: 20%;
+        }
+    }
+
+    .logo img {
+        width: 55px;
+        height: auto;
+    }
+
+    .actions {
+        .login {
+            color: $--color-text;
+        }
+            
+        .icon {
+            width: 40px;
+            margin-left: 0.5em;
+            height: auto;
+        }
+    }
+}
