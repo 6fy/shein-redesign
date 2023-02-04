@@ -4,37 +4,26 @@
         <h1>Shein</h1>
     </a>
     <div class="menu-items">
-        <div class="menu-item">
-            <a routerLink="/home" routerLinkActive="active">Home</a>
-        </div>
-        <div class="menu-item">
-            <a routerLink="/women">Dames</a>
-        </div>
-        <div class="menu-item">
-            <a routerLink="/men">Heren</a>
-        </div>
-        <div class="menu-item">
-            <a routerLink="/kids">Kinderen</a>
-        </div>
-        <div class="menu-item">
-            <a routerLink="/other">Overige</a>
-        </div>
+        <section class="menu-item link" *ngFor="let item of items">
+            <a *ngIf="!item.active" routerLink="{{ item.url }}">{{ item.title }}</a>
+            <a *ngIf="item.active" routerLink="{{ item.url }}" routerLinkActive="active">{{ item.title }}</a>
+        </section>
     </div>  
     <div class="actions">
-        <div>
+        <section>
             <a routerLink="/login" class="login">Login</a>
-        </div>
-        <div class="btn btn-register">
+        </section>
+        <section class="btn btn-register">
             Registreer
-        </div>
+        </section>
         <span class="line"></span>
-        <div class="icons">
+        <section class="icons">
             <span>
                 <img src="../../assets/images/icons/account.svg" alt="Account" class="icon" />
             </span>
             <span>
                 <img src="../../assets/images/icons/cart.svg" alt="Cart" class="icon" />
             </span>
-        </div>
+        </section>
     </div>
 </nav>

@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './assets/header/header.component';
 import { HeroComponent } from './components/hero/hero.component';
+import { SocialMediaComponent } from './components/social-media/social-media.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HeroComponent
+    HeroComponent,
+    SocialMediaComponent,
   ],
   imports: [
     BrowserModule,
