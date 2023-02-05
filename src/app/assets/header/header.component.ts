@@ -8,34 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
 	public items: Array<MenuItem> = [
-		{
-			title: 'Home',
-			url: '/',
-			active: true,
-		},
-		{
-			title: 'Dames',
-			url: '/',
-			active: false,
-		},
-		
-		{
-			title: 'Heren',
-			url: '/',
-			active: false,
-		},
-		
-		{
-			title: 'Kinderen',
-			url: '/',
-			active: false,
-		},
-		
-		{
-			title: 'Overige',
-			url: '/',
-			active: false,
-		},
+		{ title: 'Home', url: '/', active: true, },
+		{ title: 'Dames', url: '/', active: false, },
+		{ title: 'Heren', url: '/', active: false, },
+		{ title: 'Kinderen', url: '/', active: false, },
+		{ title: 'Overige', url: '/', active: false, },
 	];
 
 	constructor() { }
