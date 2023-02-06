@@ -18,6 +18,15 @@
                     color: $--color-selected;
                 }
             }
+
+            p {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                        line-clamp: 2; 
+                -webkit-box-orient: vertical;
+            }
         }
 
         .horizontal-line {
@@ -51,6 +60,7 @@
         height: 100%;
         margin-top: 2em;
         display: flex;
+        gap: 1em;
         justify-content: space-around;
 
         .video {
