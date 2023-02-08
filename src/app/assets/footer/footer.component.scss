@@ -1,0 +1,119 @@
+@import '../../app.component.scss';
+
+$--footer-background-color: #F6F6F6;
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $--footer-background-color;
+    padding: 1em 2em;
+
+    .top-footer {
+        display: flex;
+        height: 50%;
+        margin: 2em 0 8em 0;
+
+        .footer-links {
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+            width: 50%;
+
+            .link-list {
+
+                .link-list-title {
+                    text-transform: uppercase;
+                    color: $--color-text;
+                    font-weight: $--fw-bold;
+                    padding-bottom: 10px;
+                }
+
+                ul {
+                    list-style-type: none;
+
+                    li {
+                        font-size: $--fs-small;
+                        padding-bottom: 5px;
+
+                        a:hover {
+                            cursor: pointer !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .newsletter-section {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            padding: 0 5em;
+            gap: 1em;
+
+            .social-media {
+                display: flex;
+                gap: 1em;
+
+                .social-media-icon {
+                    background-color: $--color-gray-light; 
+                    width: 35px;
+                    height: 35px;
+                    border-radius: $--border-radius-large;
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                }
+            }
+
+            .newsletter {
+                .newsletter-input {
+                    border: $--border-default;
+                    border-bottom: $--border-default;
+                    padding: 0.5em;
+                    font-size: $--fs-small;
+                    background-color: $--footer-background-color;
+                    margin-right: 10px;
+                    border-radius: $--border-radius-small;
+                    width: 50%;
+                }
+
+                .newsletter-btn {
+                    background-color: $--color-primary;
+                    color: $--color-secundary;
+                    border: none;
+                    padding: 0.5em 1em;
+                    font-size: $--fs-small;
+                    border-radius: $--border-radius-small;
+                    margin-top: 1em;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .bottom-footer {
+        height: 50%;
+        text-align: center;
+
+        .footer-link {
+            text-decoration: none;
+            color: #000;
+            font-size: $--fs-small;
+            padding-right: 1em;
+            padding-left: 0.5em;
+
+            &:not(:last-child) {
+                border-right: $--border-default;
+            }
+
+            .footer-country {
+                display: inline;
+            }
+
+            a:hover {
+                cursor: pointer !important;
+            }
+        }
+    }
+}

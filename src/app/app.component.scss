@@ -2,8 +2,10 @@
 
 $--color-selected: #436BF5;
 $--color-text: #000;
+$--color-primary: #000;
 $--color-secundary: #fff;
 $--color-gray: #979797;
+$--color-gray-light: #e2e2e2;
 
 $--border-default: 1px solid #e7e4e4;
 $--gradient-default: linear-gradient(180deg, #FF0505 0%, #D65A5A 100%);
@@ -12,6 +14,12 @@ $--shadow-default: 0px 4px 4px $--color-gray;
 $--border-radius-large: 40px;
 $--border-radius-medium: 20px;
 $--border-radius-small: 10px;
+
+$--fs-large: 1.5em;
+$--fs-medium: 1em;
+$--fs-small: 0.9em;
+
+$--fw-bold: 700;
 
 * {
     margin: 0;
