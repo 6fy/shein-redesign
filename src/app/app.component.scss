@@ -64,3 +64,9 @@ $--fw-bold: 700;
 .app {
     margin: 0px 5em;
 }
+
+@media only screen and (max-width: 600px) {
+    .app {
+        margin: 0px 15px;
+    }
+}

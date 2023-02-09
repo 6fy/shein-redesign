@@ -16,14 +16,30 @@
         <section class="btn btn-register">
             Registreer
         </section>
-        <span class="line"></span>
         <section class="icons">
-            <span>
-                <img src="../../assets/images/icons/account.svg" alt="Account" class="icon" />
-            </span>
-            <span>
-                <img src="../../assets/images/icons/cart.svg" alt="Cart" class="icon" />
-            </span>
+            <img src="../../assets/images/icons/account.svg" alt="Account" class="icon" />
+            <img src="../../assets/images/icons/cart.svg" alt="Cart" class="icon" />
         </section>
     </div>
+</nav>
+<nav class="hamburger-menu">
+    <section class="lines" (click)="toggleHamburgerMenu()">
+        <section class="line"></section>
+        <section class="line"></section>
+        <section class="line"></section>
+    </section>
+    <section class="hamburger-menu-items" id="hamburgerItems">
+        <section class="menu-item link" *ngFor="let item of items">
+            <a *ngIf="!item.active" routerLink="{{ item.url }}">{{ item.title }}</a>
+            <a *ngIf="item.active" routerLink="{{ item.url }}" routerLinkActive="active">{{ item.title }}</a>
+        </section>
+        <div class="actions">
+            <section>
+                <a routerLink="/login" class="login">Login</a>
+            </section>
+            <section>
+                <a routerLink="/register" class="login">Registreer</a>
+            </section>
+        </div>
+    </section>
 </nav>

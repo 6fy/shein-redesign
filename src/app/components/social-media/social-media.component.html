@@ -18,11 +18,11 @@
     </article>
     <section class="video-body">
         <div class="video" *ngFor="let video of activeVideos">
-            <video *ngIf="video.isVideo" width="320" height="240" controls>
+            <video *ngIf="video.isVideo" controls>
                 <source [src]="video.FullUrl" [type]="video.Type">
                 Your browser does not support the video tag.
             </video>
-            <img *ngIf="!video.isVideo" [src]="video.FullUrl" [alt]="video.Name" width="160" height="240" />
+            <img *ngIf="!video.isVideo" [src]="video.FullUrl" [alt]="video.Name" />
             <section class="caption">
                 {{ video.Caption }}
             </section>

@@ -28,3 +28,19 @@
         }
     }
 }
+
+@media only screen and (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+
+        .hero-interaction {
+            width: 100%;
+            margin-bottom: 3em;
+        }
+
+        .clothes-thumbnail-holder {
+            width: 100%;
+        }
+    }
+}

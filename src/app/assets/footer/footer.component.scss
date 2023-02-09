@@ -48,7 +48,7 @@ footer {
             width: 50%;
             display: flex;
             flex-direction: column;
-            padding: 0 5em;
+            padding-left: 5em;
             gap: 1em;
 
             .social-media {
@@ -115,5 +115,38 @@ footer {
                 cursor: pointer !important;
             }
         }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .top-footer {
+        flex-direction: column;
+        align-items: center;
+
+        .footer-links {
+            width: 100% !important;
+            margin-bottom: 2em;
+        }
+
+        .newsletter-section {
+            width: 100% !important;
+            padding: 0;
+        }
+    }
+
+    .newsletter-section {
+        padding-left: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .top-footer {
+        .footer-links {
+            flex-direction: column;
+        }
+    }
+
+    .footer-link {
+        padding: 0 !important;
     }
 }

@@ -10,12 +10,19 @@ nav.header {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 2em;
         width: 40%;
 
         &:first-child {
             width: 20%;
         }
+    }
+
+    >:not(:last-child) {
+        gap: 2em;
+    }
+
+    > :last-child {
+        gap: 4px;
     }
 
     .logo img {
@@ -32,6 +39,69 @@ nav.header {
             width: 40px;
             margin-left: 0.5em;
             height: auto;
+
+            &:first-child {
+                border-left: $--border-default;
+            }
         }
     }
 }
+
+@media (min-width: 1100px) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 1100px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    nav.header {
+        display: none;
+    }
+}
+
+.hamburger-menu {
+    height: 100%;
+    width: 30%;
+
+    .hamburger-menu-items {
+        display: none;
+        background-color: $--color-gray-light;
+        margin-top: 1em;
+        height: calc(100% - 2em);
+        border-top-right-radius: $--border-radius-small;
+        border-bottom-right-radius: $--border-radius-small;
+
+        .menu-item {
+            &.link {
+                padding: 5px;
+            }
+        }
+    }
+
+    .actions {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .lines {
+        margin-left: 10px;
+
+        .line {
+            width: 2em;
+            height: 3px;
+            background-color: #000;
+            margin: 5px 0;
+            border-radius: $--border-radius-medium;
+        }
+    }
+}
+@media (max-width: 400px) {
+    .hamburger-menu {
+        width: 40%;
+    }
+}
+

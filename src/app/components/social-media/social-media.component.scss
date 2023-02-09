@@ -68,11 +68,67 @@
             padding: 0.5em;
             border-radius: $--border-radius-small;
 
+            video {
+                width: 320px;
+                height: 240px;
+            }
+
+            img {
+                width: 160px;
+                height: 240px;
+            }
+
             .caption {
                 background-color: $--color-secundary;
                 border-radius: $--border-radius-small;
                 padding: 0.5em;
             }
         }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .video-body {
+        flex-direction: column;
+        align-items: center;
+
+        .video {
+            width: 50%;
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .social-media-holder .list-item {
+        width: 50%;
+    }
+
+    article.video-header {
+        width: 80% !important;
+    }
+
+    .video {
+        video {
+            width: 220px !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .social-media-holder {
+        flex-direction: column;
+        align-items: center;
+
+        .list-item {
+            width: 100%;
+        }
+    }
+
+    .video-body .video {
+        width: 100% !important;
+    }
+
+    article.video-header {
+        width: 100% !important;
     }
 }
