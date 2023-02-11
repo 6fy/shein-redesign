@@ -24,7 +24,7 @@
                 <section class="chat-body">
                     <img src="../../assets/images/icons/queue.svg" alt="queue" />
                     <p>{{ employee.getQueue() }} afwachtende</p>
-                    <button>Chat</button>
+                    <button (click)="openChat(employee)">Chat</button>
                 </section>
             </section>
         </section>

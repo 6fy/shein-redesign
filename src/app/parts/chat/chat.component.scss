@@ -1,0 +1,187 @@
+@import '../../app.component.scss';
+
+$--see-through: rgba(90, 92, 105, 0.5);
+
+.chat {
+    position: fixed;
+    right: 5rem;
+    bottom: 4rem;
+    display: inline;
+    width: 2.75rem;
+    height: 2.75rem;
+    text-align: center;
+    color: $--color-secondary;
+    line-height: 46px;
+
+    .chat-icon {
+        position: relative;
+        background: $--see-through;
+        color: $--color-secondary;
+        font-family: Arial;
+        width: 90px;
+        height: 64px;
+        border-radius: 10px;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+
+        .bubble {
+            background-color: $--color-secondary;
+            border-radius: $--border-radius-large;
+            width: 10px;
+            height: 10px;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 0;
+            z-index: 1;
+            border-style: solid;
+            border-width: 0 29px 20px 0;
+            border-color: transparent $--see-through transparent transparent;
+            bottom: -20px;
+            left: 75%;
+            margin-left: -14.5px;
+        }
+
+        &:hover {
+            .bubble {
+                animation: dance 1s infinite;
+
+                &:nth-child(2) {
+                    animation-delay: 0.3s;
+                }
+
+                &:nth-child(3) {
+                    animation-delay: 0.5s;
+                }
+            }
+        }
+    }
+}
+
+.chat .chat-window {
+    background-color: $--color-secondary;
+    width: 350px;
+    height: 400px;
+    bottom: 7em;
+    right: 2em;
+    position: fixed;
+    border-radius: $--border-radius-medium;
+    box-shadow: $--shadow-default;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em;
+    z-index: 1;
+    color: $--color-primary;
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: $--border-default;
+        
+        .chat-icons {
+            span {
+                cursor: pointer;
+
+                img {
+                    width: 25px;
+                }
+            }
+        }
+    }
+
+    .chat-body {
+        height: 100%;
+        overflow-y: scroll;
+
+        .chat-message-holder {
+            display: flex;
+            flex-direction: column;
+
+            .message-author {
+                display: flex;
+            }
+
+            img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                margin-right: 0.5em;
+            }
+
+            .chat-message {
+                border-radius: $--border-radius-medium;
+                width: 80%;
+                margin-right: 0.5em;
+                margin-top: 0.5em;
+                font-size: $--fs-small;
+                line-height: 1.5em;
+
+                p {
+                    text-align: left;
+                    padding: 1em;
+                }
+
+                &.right {
+                    align-self: flex-end;
+                    background-color: $--color-gray-light;
+                    border-top-right-radius: 0;
+                }
+
+                &.left {
+                    align-self: flex-start;
+                    background-color: #fdd9c4;
+                    border-top-left-radius: 0;
+                }
+            }
+
+            .time {
+                font-size: $--fs-small;
+                justify-content: flex-end;
+                display: flex;
+                margin-right: 0.5em;
+
+                &.right {
+                    align-self: flex-end;
+                }
+
+                &.left {
+                    align-self: flex-start;
+                }
+            }
+        }
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+        border-top: $--border-default;
+        padding-top: 1em;
+
+        textarea {
+            background-color: $--color-gray-light;
+            border: none;
+            border-radius: $--border-radius-medium;
+            padding: 1em 3em;
+            width: 100%;
+            overflow-y: scroll;
+            color: $--color-primary;
+        }
+
+        button {
+            padding: 0.5em 1.5em;
+
+            img {
+                width: 30px;
+            }
+        }
+    }
+}

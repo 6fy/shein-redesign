@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ChatService } from 'src/app/services/chat.service';
+
 @Component({
   selector: 'app-qna',
   templateUrl: './qna.component.html',
@@ -49,7 +51,9 @@ export class QnaComponent implements OnInit {
 
 	public shownCustomerServiceEmployees: CustomerService[] = [];
 
-	constructor() { }
+	constructor(
+		public chatService: ChatService
+	) { }
 
 	ngOnInit(): void {
 		this.chatTypes.sort((a, b) => (a.priority > b.priority) ? 1 : -1);
@@ -73,6 +77,11 @@ export class QnaComponent implements OnInit {
 				return employee.getChatTypes().filter(chatType => chatType.type === chat.type).length > 0;
 			});
 		}
+	}
+
+	public openChat(employee: CustomerService): void {
+		this.chatService.clearChat();
+		this.chatService.addMessage(`Hoi, ik ben Brainless de chatbot. Kan ik iets voor je doen tot ${employee.getName()} beschikbaar is?`, this.chatService.chatbot);
 	}
 
 }

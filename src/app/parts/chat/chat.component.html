@@ -1,0 +1,41 @@
+<section class="chat">
+    <section class="chat-icon" (click)="chatService.toggleChat()">
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+    </section>
+    <section class="chat-window" *ngIf="chatService.chat.active">
+        <header>
+            <h3>Support Chat</h3>
+            <section class="chat-icons">
+                <span class="close" (click)="chatService.clearChat()" title="Clear Chat">
+                    <img src="../../assets/images/icons/trash.svg" alt="Clear" />
+                </span>
+                <span class="close" (click)="chatService.activeChat(false)" title="Close Chat">
+                    <img src="../../assets/images/icons/close.svg" alt="Close" />
+                </span>
+            </section>
+        </header>
+        <section class="chat-body">
+            <section class="chat-message-holder" *ngFor="let message of chatService.chat.messages">
+                <section class="message-author" *ngIf="message.sender">
+                    <img *ngIf="message.sender.bot" [src]="'../../assets/images/icons/' + message.sender.avatar" alt="Brainless" />
+                    <img *ngIf="!message.sender.bot" [src]="'../../assets/images/profiles/' + message.sender.avatar" [alt]="message.sender.name" />
+                    <section [class]="'chat-message ' + (message.sender == null ? 'right' : 'left')">
+                        <p>{{ message.text }}</p>
+                    </section>
+                </section>
+                <section class="chat-message right" *ngIf="!message.sender">
+                    <p>{{ message.text }}</p>
+                </section>
+                <p [class]="'time ' + (message.sender == null ? 'right' : 'left')">{{ message.date | date:'dd MMMM YYYY, HH:mm' }}</p>
+            </section>
+        </section>
+        <footer>
+            <textarea placeholder="Type your message here..." #message></textarea>
+            <button type="button" class="btn btn-primary" (click)="sendMessage(message)">
+                <img src="../../assets/images/icons/chat-send.png" alt="Send" />
+            </button>
+        </footer>
+    </section>
+</section>
