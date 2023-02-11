@@ -1,0 +1,33 @@
+<section class="qna">
+    <section class="qna-sidebar">
+        <section class="sidebar">
+            <h3>Stel je vragen</h3>
+            <section class="chat-types">
+                <button *ngFor="let chat of chatTypes" [class]="'chat-type' + (isActive(chat) ? ' active' : '')" (click)="setActiveChat(chat)">
+                    {{ chat.type }}
+                </button>
+            </section>
+        </section>
+    </section>
+    <section class="chats">
+
+        <section class="chat" *ngFor="let employee of shownCustomerServiceEmployees">
+            <section class="chat-header">
+                <section class="image-holder">
+                    <img [src]="employee.getPicture()" [alt]="employee.getName()" class="user-icon" />
+                </section>
+            </section>
+            <section class="chat-content">
+                <header>
+                    <h3>{{ employee.getName() }}</h3>
+                </header>
+                <section class="chat-body">
+                    <img src="../../assets/images/icons/queue.svg" alt="queue" />
+                    <p>{{ employee.getQueue() }} afwachtende</p>
+                    <button>Chat</button>
+                </section>
+            </section>
+        </section>
+
+    </section>
+</section>

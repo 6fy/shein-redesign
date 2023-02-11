@@ -1,0 +1,62 @@
+@import '../../app.component.scss';
+
+.advertisement {
+    background: $--gradient-default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $--color-secondary;
+    border-radius: $--border-radius-medium;
+    margin: 5em 0;
+
+    .advertisement-article {
+        display: block;
+        margin: 0 auto;
+        width: 40%;
+    }
+
+    .advertisement-btn {
+        width: 40%;
+
+        button {
+            padding: 1em 3em;
+            background: $--color-secondary;
+            color: $--color-primary;
+            border: none;
+            border-radius: $--border-radius-large;
+            font-size: $--fs-medium;
+            box-shadow: $--shadow-default;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .advertisement {
+        flex-direction: column;
+        padding: 2em 1em;
+
+        .advertisement-article {
+            width: 100%;
+            margin: 0;
+        }
+
+        .advertisement-btn {
+            width: 100%;
+            margin-top: 1em;
+        }
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .advertisement {
+        padding: 2em 0;
+
+        .advertisement-btn {
+            button {
+                font-size: $--fs-small;
+            }
+        }
+    }
+}

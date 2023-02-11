@@ -3,7 +3,7 @@
 $--color-selected: #436BF5;
 $--color-text: #000;
 $--color-primary: #000;
-$--color-secundary: #fff;
+$--color-secondary: #fff;
 $--color-gray: #979797;
 $--color-gray-light: #e2e2e2;
 
@@ -43,7 +43,7 @@ $--fw-bold: 700;
     }
 
     .btn {
-        color: $--color-secundary !important;
+        color: $--color-secondary !important;
         padding: 0.5em 2em;
         border-radius: $--border-radius-large;
         cursor: pointer;

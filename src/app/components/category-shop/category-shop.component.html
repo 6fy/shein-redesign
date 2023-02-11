@@ -1,13 +1,21 @@
 <div class="category-shop">
-    <article>
-        <header>
-            <h2>Shop Per Categorie</h2>
-        </header>
-        <p class="description-text">Schrijf je nu en krijg 30% korting op je eerste bestelling.</p>
-    </article>
-    <section>
-        <section>
-            Zomer kleding
+    <ng-article 
+        title="Shop Per Categorie" 
+        classes="shop-article"
+        description="Schrijf je nu en krijg 30% korting op je eerste bestelling." 
+    ></ng-article>
+    <section class="categories">
+        <section class="category" *ngFor="let category of categories">
+            <a href="#">
+                <img [src]="category.getImagePath()" [alt]="category.getName()">
+                <section class="shop-text">
+                    <h3>{{ category.getName() }}</h3>
+                    <p class="description-text">{{ category.getDesc() }}</p>
+                </section>
+                <section class="shop-btn">
+                    <button>Shop nu</button>
+                </section>
+            </a>
         </section>
     </section>
 </div>

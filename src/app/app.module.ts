@@ -8,6 +8,10 @@ import { HeroComponent } from './components/hero/hero.component';
 import { SocialMediaComponent } from './components/social-media/social-media.component';
 import { CategoryShopComponent } from './components/category-shop/category-shop.component';
 import { FooterComponent } from './assets/footer/footer.component';
+import { AdvertisementSectionComponent } from './components/advertisement-section/advertisement-section.component';
+import { ArticleComponent } from './parts/article/article.component';
+import { QnaComponent } from './components/qna/qna.component';
+import { ChatComponent } from './parts/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +21,10 @@ import { FooterComponent } from './assets/footer/footer.component';
     SocialMediaComponent,
     CategoryShopComponent,
     FooterComponent,
+    AdvertisementSectionComponent,
+    ArticleComponent,
+    QnaComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
