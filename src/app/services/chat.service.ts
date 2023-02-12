@@ -45,6 +45,7 @@ export class ChatService {
 		}
 		this.storeMessage(message);
 		this.chat.messages.push(message);
+		this.activeChat(true);
 	}
 
 	private storeMessage(message: Message): void {

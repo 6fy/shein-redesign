@@ -12,6 +12,7 @@ import { AdvertisementSectionComponent } from './components/advertisement-sectio
 import { ArticleComponent } from './parts/article/article.component';
 import { QnaComponent } from './components/qna/qna.component';
 import { ChatComponent } from './parts/chat/chat.component';
+import { ReviewsComponent } from './components/reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ChatComponent } from './parts/chat/chat.component';
     ArticleComponent,
     QnaComponent,
     ChatComponent,
+    ReviewsComponent,
   ],
   imports: [
     BrowserModule,

@@ -118,7 +118,7 @@ $--see-through: rgba(90, 92, 105, 0.5);
 
             .chat-message {
                 border-radius: $--border-radius-medium;
-                width: 80%;
+                max-width: 80%;
                 margin-right: 0.5em;
                 margin-top: 0.5em;
                 font-size: $--fs-small;
@@ -139,6 +139,40 @@ $--see-through: rgba(90, 92, 105, 0.5);
                     align-self: flex-start;
                     background-color: #fdd9c4;
                     border-top-left-radius: 0;
+                }
+
+                .typing {
+                    position: relative;
+                    background: #fdd9c4;
+                    font-family: Arial;
+                    width: 90px;
+                    height: 64px;
+                    border-radius: 10px;
+                    padding: 0px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5px;
+
+                    &.hidden {
+                        display: none !important;
+                    }
+
+                    .bubble {
+                        background-color: $--color-secondary;
+                        border-radius: $--border-radius-large;
+                        width: 10px;
+                        height: 10px;
+                        animation: dance 1s infinite;
+
+                        &:nth-child(2) {
+                            animation-delay: 0.3s;
+                        }
+
+                        &:nth-child(3) {
+                            animation-delay: 0.5s;
+                        }
+                    }
                 }
             }
 

@@ -30,6 +30,15 @@
                 </section>
                 <p [class]="'time ' + (message.sender == null ? 'right' : 'left')">{{ message.date | date:'dd MMMM YYYY, HH:mm' }}</p>
             </section>
+            <section class="chat-message-holder">
+                <section class="chat-message left">
+                    <section class="typing hidden" id="typing">
+                        <span class="bubble"></span>
+                        <span class="bubble"></span>
+                        <span class="bubble"></span>
+                    </section>
+                </section>
+            </section>
         </section>
         <footer>
             <textarea placeholder="Type your message here..." #message></textarea>

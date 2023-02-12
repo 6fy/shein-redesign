@@ -8,6 +8,10 @@
     .hero-interaction {
         width: 50%;
 
+        ng-article {
+            font-size: $--fs-large;
+        }
+
         .hero-text {
             display: flex;
             flex-direction: column;

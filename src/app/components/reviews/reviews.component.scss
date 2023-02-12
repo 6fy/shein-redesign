@@ -1,0 +1,50 @@
+@import '../../app.component.scss';
+
+.reviews {
+    margin: 4em;
+
+    ng-article {
+        font-size: $--fs-large;
+    }
+
+    .reviews-holder {
+        overflow-x: scroll;
+
+        .review {
+            width: 200px;
+
+            header {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 250px;
+                gap: 10px;
+
+                .review-title {
+                    font-size: $--fs-large;
+                    font-weight: bold;
+                }
+
+                img {
+                    width: 100px;
+                    border-radius: $--border-radius-medium;
+                }
+            }
+
+            .review-body {
+                border-top-right-radius: $--border-radius-small;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 124px;
+                box-shadow: $--shadow-default;
+
+                footer {
+                    img {
+                        width: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
