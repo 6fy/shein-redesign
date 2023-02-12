@@ -24,9 +24,8 @@ export class ChatComponent implements OnInit {
 		this.chatService.addMessage(message.value, null);
 		this.ai(message.value);
 		message.value = '';
-
-		const chat = document.getElementById("chat-body");
-		chat?.scrollTo(0, chat.scrollHeight);
+		
+		this.scrollToBottom();
 	}
 
 	public async ai(message: string): Promise<void> {
@@ -34,7 +33,7 @@ export class ChatComponent implements OnInit {
 		typing?.classList.remove("hidden");
 
 		try {
-			const url = `https://api.esmee.cloud/ai/?q=${message}&version=1.0.0`;
+			const url = `https://api.esmee.cloud/ai/?q=${message}`;
 
 			const response = await this.get(url);
 			if (!response.ok) {
@@ -52,6 +51,7 @@ export class ChatComponent implements OnInit {
 			console.warn(error);
 		} finally {
 			typing?.classList.add("hidden");
+			this.scrollToBottom();
 		}
 	}
 
@@ -59,11 +59,22 @@ export class ChatComponent implements OnInit {
 		const response = await fetch(url, {
 			method: 'GET',
 			headers: {
+				'key': 'b50affbb2975b03f',
 				'Content-Type': 'application/json',
 				'Access-Control-Allow-Origin': '*',
+				'version': '1.0.1',
 			},
 		});
 		return response;
+	}
+
+	private scrollToBottom(): void {
+		const chat = document.getElementById("chat-overflow");
+		if (!chat) return;
+
+		setTimeout(() => {
+			chat.scrollTo(0, chat.scrollHeight);
+		}, 1);
 	}
 
 }

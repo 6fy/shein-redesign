@@ -16,7 +16,7 @@
                 </span>
             </section>
         </header>
-        <section class="chat-body">
+        <section class="chat-body" id="chat-overflow">
             <section class="chat-message-holder" *ngFor="let message of chatService.chat.messages">
                 <section class="message-author" *ngIf="message.sender">
                     <img *ngIf="message.sender.bot" [src]="'../../assets/images/icons/' + message.sender.avatar" alt="Brainless" />

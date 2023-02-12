@@ -219,3 +219,19 @@ $--see-through: rgba(90, 92, 105, 0.5);
         }
     }
 }
+
+@media screen and (max-width: 440px) {
+    .chat {
+        right: 3em;
+
+        .chat-window {
+            right: 5px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .chat-window {
+        width: 240px !important;
+    }
+}

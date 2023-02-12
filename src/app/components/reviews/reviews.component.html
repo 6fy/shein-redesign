@@ -5,18 +5,22 @@
         description="Dit vinden anderen van onze service."
     ></ng-article>
     <section class="reviews-holder">
-        <section class="review">
+        <section class="review" *ngFor="let review of reviews">
             <header>
-                <img src="../../assets/images/zepart.png" alt="review" />
+                <img [src]="review.getReviewerAvatar()" [alt]="review.reviewer.name" />
                 <div class="review-info">
-                    <h3>Patrick Zepart</h3>
+                    <h3>{{ review.reviewer.name }}</h3>
                 </div>
             </header>
             <section class="review-body">
-                <p>De kleding die ik heb besteld ging na 5 dagen al kapot en...</p>
+                <p class="review-text">{{ review.text }}</p>
                 <footer>
-                    <img src="../../assets/images/icons/star.svg" alt="star" />
-                    <img src="../../assets/images/icons/yellow-star.svg" alt="star" />
+                    <section class="stars">
+                        <span *ngFor="let star of review.getRatingStars()" [class]="star.filled ? 'yellow' : ''">★</span>
+                    </section>
+                    <button>
+                        Lees meer
+                    </button>
                 </footer>
             </section>
         </section>
