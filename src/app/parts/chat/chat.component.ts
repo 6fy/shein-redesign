@@ -34,7 +34,7 @@ export class ChatComponent implements OnInit {
 		typing?.classList.remove("hidden");
 
 		try {
-			const url = `https://api.esmee.cloud/ai/?q=${message}`;
+			const url = `https://api.esmee.cloud/ai/?q=${message}&version=1.0.0`;
 
 			const response = await this.get(url);
 			if (!response.ok) {
