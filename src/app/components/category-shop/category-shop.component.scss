@@ -23,6 +23,7 @@
             cursor: pointer;
             box-shadow: $--shadow-default;
             border-radius: $--border-radius-small;
+            background-color: $--color-secondary;
 
             &:hover {
                 opacity: 80%;

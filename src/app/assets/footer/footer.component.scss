@@ -9,6 +9,10 @@ footer {
     background-color: $--footer-background-color;
     padding: 1em 2em;
 
+    > * {
+        z-index: 5;
+    }
+    
     .top-footer {
         display: flex;
         height: 50%;
