@@ -12,6 +12,7 @@ $--see-through: rgba(90, 92, 105, 0.5);
     text-align: center;
     color: $--color-secondary;
     line-height: 46px;
+    z-index: 10;
 
     .chat-icon {
         position: relative;

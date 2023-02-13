@@ -34,6 +34,7 @@ export class ChatComponent implements OnInit {
 
 		try {
 			const url = `https://api.esmee.cloud/ai/?q=${message}`;
+			// const url = `http://127.0.0.1:5000?q=${message}`;
 
 			const response = await this.get(url);
 			if (!response.ok) {
@@ -59,10 +60,10 @@ export class ChatComponent implements OnInit {
 		const response = await fetch(url, {
 			method: 'GET',
 			headers: {
-				'key': 'b50affbb2975b03f',
+				'key': 'whui8fewhfj98orbyrf8y',
 				'Content-Type': 'application/json',
 				'Access-Control-Allow-Origin': '*',
-				'version': '1.0.1',
+				'version': '1.0.2',
 			},
 		});
 		return response;
